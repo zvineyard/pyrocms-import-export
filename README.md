@@ -2,7 +2,7 @@
 
 ## Description
 
-Display a 5 day weather forecast in PyroCMS. Powered by Yahoo! Weather.
+A PyroCMS module that lets you export from one instance of PyroCMS into another.
 
 ## Usage
 
