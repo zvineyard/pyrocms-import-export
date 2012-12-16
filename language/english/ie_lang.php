@@ -31,7 +31,7 @@ $lang['ie:export_blog']			= 'Export Blog';
 $lang['ie:export_site']			= 'Export Site';
 
 // help and desc
-$lang['ie:choose_site'] 		= 'Please choose which site you\'d like to export.';
+$lang['ie:choose_site'] 		= 'To export your site, simply click the export button below.';
 $lang['ie:import_inst'] 		= 'Please choose a XML export file to use for importing your site.';
 $lang['ie:import_users_help'] 	= 'Would you like to import the users from your previous site? If not, your new content will be assigned you you, the current logged-in user.';
 

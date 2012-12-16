@@ -33,6 +33,7 @@ class Admin_export extends Admin_Controller
 	public function index()
 	{	
 		// Get all sites in the system
+		/*
 		$sites = $this->export_m->get_sites();
 		
 		$site_list = array();
@@ -41,17 +42,18 @@ class Admin_export extends Admin_Controller
 		{
 			$site_list[$site['ref']] = $site['name'];
 		}
-		$this->form_validation->set_rules('site', 'Site', 'required');
+		*/
+		$this->form_validation->set_rules('btnAction', 'btnAction', 'required');
 
 		if ($this->form_validation->run() == FALSE)
 		{
 			$this->template->title($this->module_details['name'])
-						   ->set('sites',$site_list)
+						   //->set('sites',$site_list)
 						   ->build('admin/export');
 		}
 		else
 		{
-			$this->_export_site($this->input->post('site'));
+			$this->_export_site(SITE_REF);
 		}
 	}
 
