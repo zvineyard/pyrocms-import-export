@@ -2,7 +2,7 @@
 
 class Module_Import_export extends Module {
 
-	public $version = '0.0.1';
+	public $version = '1.0.0';
 
 	public function info()
 	{
