@@ -6,6 +6,7 @@
 		{
 			case 'export':
 			case 'import':
+			case 'wp_import':
 				echo '<button type="submit" name="btnAction" value="'.$button.'" class="btn blue">
 					<span>'.lang('ie:' . $button).'</span>
 				</button>';

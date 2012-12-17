@@ -63,7 +63,7 @@ class Admin extends Admin_Controller
 
 		$this->load->library('upload', $config);
 
-		if ( ! $this->upload->do_upload()) 
+		if (!$this->upload->do_upload())
 		{
 			$this->session->set_flashdata('error', lang('ie:upload_error'));
 			redirect('admin/'.$this->module_details['slug']);
@@ -71,7 +71,14 @@ class Admin extends Admin_Controller
 		else
 		{
 			$data = $this->upload->data();
-			$this->parse($data['file_name']);
+			if($this->input->post('btnAction') == 'import')
+			{
+				$this->parse($data['file_name']);
+			}
+			elseif($this->input->post('btnAction') == 'wp_import')
+			{
+				$this->wp_parse($data['file_name']);
+			}
 		}
 	}
 
@@ -194,5 +201,69 @@ class Admin extends Admin_Controller
 		$xml = file_get_contents('uploads/'.SITE_REF.'/import_export/'.$file);
 		
 		return simplexml_load_string($xml);
+	}
+
+	public function wp_parse($file) 
+	{
+		set_time_limit(0);
+
+		$this->load->library('wp_import');
+				
+		// Defaults
+		$comments = array();		
+		
+		// Get the XML from the uploaded file
+		$xml = $this->get_filtered_wp_xml($file);
+		
+		// Load the wp_import Library
+		$this->load->library('wp_import');
+		
+		// Check for duplicate post titles
+		$titles = $this->wp_import->has_duplicate_titles($xml);
+		
+		if ($titles)
+		{
+			$this->template
+				->title($this->module_details['name'])
+				->set('items', $titles)
+				->build('admin/duplicates');
+			return;
+		}
+
+		// Import Categories
+		$this->wp_import->categories($xml);
+		
+		// Import Tags
+		$this->wp_import->tags($xml);
+		
+		// Import Posts
+		$this->wp_import->posts($xml);
+		
+		// Import Comments
+		$this->wp_import->comments($xml);
+		
+		// Import Users
+		$this->wp_import->users($xml); // Currently only imports users who aren't already in the system
+
+		// Import Pages
+		$this->wp_import->pages($xml);
+		$this->session->set_flashdata('success', 'The WordPress file has been successfully imported.');
+
+		redirect('admin/wordpress_import');
+	}
+
+	public function get_filtered_wp_xml($file)
+	{
+		$xml = file_get_contents('uploads/'.SITE_REF.'/wp/'.$file);
+		
+		return simplexml_load_string(str_replace(array(
+			'content:encoded',
+			'excerpt:encoded',
+			'wp:',
+		), array(
+			'content',
+			'excerpt',
+			'',
+		), $xml));
 	}
 }
