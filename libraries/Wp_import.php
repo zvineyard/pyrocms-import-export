@@ -365,28 +365,14 @@ class Wp_Import {
 			$html = $page['html'];
 			unset($page['html']);
 			$this->ci->db->insert('default_pages',$page);
-			if(CMS_VERSION == "2.1.2")
-			{
-				$chunk = array(
-					'slug' => SITE_REF,
-					'page_id' => $this->ci->db->insert_id(),
-					'body' => $html,
-					'type' => 'html',
-					'parsed' => '',
-					'sort' => 1
-				);
-			}
-			else
-			{
-				$chunk = array(
-					'slug' => SITE_REF,
-					'page_id' => $this->ci->db->insert_id(),
-					'body' => $html,
-					'type' => 'html',
-					'parsed' => '',
-					'sort' => 1
-				);
-			}
+			$chunk = array(
+				'slug' => SITE_REF,
+				'page_id' => $this->ci->db->insert_id(),
+				'body' => $html,
+				'type' => 'html',
+				'parsed' => '',
+				'sort' => 1
+			);
 			$this->ci->db->insert('default_page_chunks',$chunk);
 		}
 
