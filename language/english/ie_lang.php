@@ -33,8 +33,9 @@ $lang['ie:export_site']			= 'Export Site';
 
 // help and desc
 $lang['ie:choose_site'] 		= 'To export your site, simply click the export button below.';
-$lang['ie:import_inst'] 		= 'Please choose a XML export file to use for importing your site. If you are planning to import your WordPress site/blog into PyroCMS, <br />please choose the XML file you exported out of WordPress.';
-$lang['ie:import_users_help'] 	= 'Would you like to import the users from your previous site? If not, your new content will be assigned you you, the current logged-in user.';
+$lang['ie:import_inst'] 		= 'Please choose a XML export file to use for importing your site. If you are planning to import your WordPress site/blog into PyroCMS, <br />
+please choose the XML file you exported out of WordPress.';
+$lang['ie:import_users_help'] 	= 'Would you like to import the users from your previous site? If not, your new content will be assigned you you, the current logged-in user. <br /> PLEASE NOTE: This feature is not enabled for WordPress imports. All WordPress content is currently assiged to you, the user importing the site.';
 
 // errors & success messages
 $lang['ie:upload_error']  		= 'Your file could not be uploaded. Please try again.';

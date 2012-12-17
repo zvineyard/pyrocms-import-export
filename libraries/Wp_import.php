@@ -182,7 +182,7 @@ class Wp_Import {
 					'body' => nl2br((string) mb_convert_encoding($val->content,"HTML-ENTITIES", "UTF-8")),
 					'parsed' => '',
 					'keywords' => $keywords_hash,
-					'author_id' => 1,
+					'author_id' => $this->ci->session->userdata('id'),
 					'created_on' => (string) strtotime($val->post_date),
 					'updated_on' => (string) strtotime($val->pubDate),
 					'comments_enabled' => $comments_enabled,
@@ -365,14 +365,28 @@ class Wp_Import {
 			$html = $page['html'];
 			unset($page['html']);
 			$this->ci->db->insert('default_pages',$page);
-			$chunk = array(
-				'slug' => SITE_REF,
-				'page_id' => $this->ci->db->insert_id(),
-				'body' => $html,
-				'type' => 'html',
-				'parsed' => '',
-				'sort' => 1
-			);
+			if(CMS_VERSION == "2.1.2")
+			{
+				$chunk = array(
+					'slug' => SITE_REF,
+					'page_id' => $this->ci->db->insert_id(),
+					'body' => $html,
+					'type' => 'html',
+					'parsed' => '',
+					'sort' => 1
+				);
+			}
+			else
+			{
+				$chunk = array(
+					'slug' => SITE_REF,
+					'page_id' => $this->ci->db->insert_id(),
+					'body' => $html,
+					'type' => 'html',
+					'parsed' => '',
+					'sort' => 1
+				);
+			}
 			$this->ci->db->insert('default_page_chunks',$chunk);
 		}
 
