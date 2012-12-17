@@ -8,10 +8,12 @@ class Module_Import_export extends Module {
 	{
 		return array(
 			'name' => array(
-				'en' => 'Import/Export'
+				'en' => 'Import/Export',
+				'fr' => 'Import/Export'
 			),
 			'description' => array(
-				'en' => 'Import and export your PyroCMS site(s).'
+				'en' => 'Import and export your PyroCMS site(s).',
+				'fr' => 'Importer et exporter vos sites PyroCMS.'
 			),
 			'frontend'	=> true,
 			'backend'	=> true,
@@ -106,7 +108,7 @@ class Module_Import_export extends Module {
 		}
 		*/
 		@rmdir($this->upload_path.'import_export');
-		return true; 
+		return true;
 	}
 
 
