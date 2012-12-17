@@ -249,12 +249,12 @@ class Admin extends Admin_Controller
 		$this->wp_import->pages($xml);
 		$this->session->set_flashdata('success', 'The WordPress file has been successfully imported.');
 
-		redirect('admin/wordpress_import');
+		redirect('admin/import_export');
 	}
 
 	public function get_filtered_wp_xml($file)
 	{
-		$xml = file_get_contents('uploads/'.SITE_REF.'/wp/'.$file);
+		$xml = file_get_contents('uploads/'.SITE_REF.'/import_export/'.$file);
 		
 		return simplexml_load_string(str_replace(array(
 			'content:encoded',

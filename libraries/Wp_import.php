@@ -366,6 +366,7 @@ class Wp_Import {
 			unset($page['html']);
 			$this->ci->db->insert('default_pages',$page);
 			$chunk = array(
+				'slug' => SITE_REF,
 				'page_id' => $this->ci->db->insert_id(),
 				'body' => $html,
 				'type' => 'html',
