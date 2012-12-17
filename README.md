@@ -2,7 +2,7 @@
 
 ## Description
 
-A PyroCMS module that lets you export from one instance of PyroCMS into another. The module, as of version 1.1.0 also lets you import your WordPress site into PyroCMS.
+A PyroCMS module that lets you export from one instance of PyroCMS into another. The module, as of version 1.1.0, also lets you import your WordPress site into PyroCMS.
 
 ## Usage
 
