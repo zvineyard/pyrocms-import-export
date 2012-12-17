@@ -42,6 +42,5 @@ $lang['ie:upload_error']  		= 'Your file could not be uploaded. Please try again
 $lang['ie:upload_success']  	= 'Your file has been uploaded!';
 $lang['ie:import_success']  	= 'Your site has been successfully imported.';
 $lang['ie:version_mismatch']  	= 'The content you are trying to import came from a different version (%s) of PyroCMS.';
-$lang['ie:version_mismatch']  	= 'The content you are trying to import came from a different edition (%s) of PyroCMS.';
 
 ?>
