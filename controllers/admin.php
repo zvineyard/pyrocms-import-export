@@ -23,7 +23,6 @@ class Admin extends Admin_Controller
 		// Load all the required classes
 		$this->load->library('form_validation');
 		$this->lang->load('ie');
-		$this->load->library('module_import');
 		$this->load->model('import_m');
 
 		// Set the validation rules

@@ -1,5 +1,5 @@
 <section class="title">
-	<h4><?php echo lang('wp:'.$this->method); ?></h4>
+	<h4><?php echo lang('ie:import_duplicates'); ?></h4>
 </section>
 
 <section class="item">

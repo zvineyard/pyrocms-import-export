@@ -1,18 +1,21 @@
 <?php
 
 //sections
-$lang['ie:import']				=	'Import';
-$lang['ie:export']				=	'Export';
-$lang['ie:blog']				=	'Blog';
-$lang['ie:site']				=	'Site Export';
+$lang['ie:import']				= 'Import';
+$lang['ie:export']				= 'Export';
+$lang['ie:blog']				= 'Blog';
+$lang['ie:site']				= 'Export';
 
 //page titles
-$lang['ie:create']				=	'Create Item';
+$lang['ie:create']				= 'Create Item';
+$lang['ie:import_duplicates']	= 'Import Duplicates';
 
 //labels
-$lang['ie:item_list']			=	'Item List';
-$lang['ie:import_users'] 		= 	'Import users';
-$lang['ie:wp_import']			=	'WordPress Import';
+$lang['ie:item_list']			= 'Item List';
+$lang['ie:import_users'] 		= 'Import users';
+$lang['ie:wp_import']			= 'WordPress Import';
+$lang['ie:name']				= 'Name';
+$lang['ie:slug']				= 'Slug';
 
 //buttons
 $lang['ie:export_xml']			= 'Export XML';
