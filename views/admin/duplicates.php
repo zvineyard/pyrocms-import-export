@@ -1,5 +1,4 @@
 <section class="title">
-	<!-- We'll use $this->method to switch between sample.create & sample.edit -->
 	<h4><?php echo lang('wp:'.$this->method); ?></h4>
 </section>
 
@@ -7,7 +6,7 @@
 
 	<?php echo form_open(base_url().'admin/'.$this->module_details['slug'].'/parse/'.$this->uri->segment(4)); ?>
 		
-		<p>It looks like your WordPress data has duplicate post titles. Please rename the titles you see below in your XML data.</p>      
+		<p><?php echo lang('ie:duplicates');?></p>      
         <ul>
 		<?php
 		foreach($items as $key => $item) {
@@ -17,8 +16,8 @@
         </ul>
 		<hr />
 		<div class="buttons">
-            <button type="submit" name="btnAction" value="save" class="btn orange"><span>Try Again</span></button>
-			<a href="<?php echo base_url().'admin/'.$this->module_details['slug'];?>" class="btn gray cancel">Cancel</a>
+            <button type="submit" name="btnAction" value="save" class="btn orange"><span><?php echo lang('ie:try_again');?></span></button>
+			<a href="<?php echo base_url().'admin/'.$this->module_details['slug'];?>" class="btn gray cancel"><?php echo lang('ie:cancel');?></a>
 		</div>
 		
 	<?php echo form_close(); ?>

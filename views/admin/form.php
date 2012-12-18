@@ -1,5 +1,4 @@
 <section class="title">
-	<!-- We'll use $this->method to switch between sample.create & sample.edit -->
 	<h4><?php echo lang('sample:'.$this->method); ?></h4>
 </section>
 
