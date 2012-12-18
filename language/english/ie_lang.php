@@ -36,7 +36,7 @@ $lang['ie:duplicates'] 			= 'It looks like your WordPress data has duplicate pos
 $lang['ie:upload_error']  		= 'Your file could not be uploaded. Please try again.';
 $lang['ie:upload_success']  	= 'Your file has been uploaded!';
 $lang['ie:import_success']  	= 'Your site has been successfully imported.';
-$lang['ie:import_wp_success']  	= 'Your site has been successfully imported.';
+$lang['ie:import_wp_success']  	= 'Your WordPress site has been successfully imported.';
 $lang['ie:version_mismatch']  	= 'The content you are trying to import came from a different version (%s) of PyroCMS.';
 
 ?>
