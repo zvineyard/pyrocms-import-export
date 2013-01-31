@@ -93,7 +93,7 @@ class Wp_Import {
 		
 			$slug = (string) $val->post_name;
 						
-			$comments_enabled = ($val->comment_status == 'open');
+			$comments_enabled = ($val->comment_status == 'open') ? '3 months' : 'no';
 			
 			$status = ($val->status === 'publish') ? 'draft' : 'live';
 			
