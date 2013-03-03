@@ -224,9 +224,9 @@ class Wp_Import {
 						$comments[$slug][] = array(
 							'is_active' => 1,
 							'user_id' => 0,
-							'name' => (string) $comment->comment_author,
-							'email' => (string) $comment->comment_author_email,
-							'website' => (string) $comment->comment_author_url,
+							'user_name' => (string) $comment->comment_author,
+							'user_email' => (string) $comment->comment_author_email,
+							'user_website' => (string) $comment->comment_author_url,
 							'comment' => (string) mb_convert_encoding($comment->comment_content,"HTML-ENTITIES","UTF-8"),
 							'parsed' => '',
 							'module' => 'blog',
