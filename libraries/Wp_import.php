@@ -184,6 +184,8 @@ class Wp_Import {
 					'author_id' => $this->ci->session->userdata('id'),
 					'created_on' => (string) strtotime($val->post_date),
 					'updated_on' => (string) strtotime($val->pubDate),
+					'created' => (string) strtotime($val->post_date),
+					'updated' => date('Y-m-d H:i:s', (string) strtotime($val->pubDate)),
 					'comments_enabled' => $comments_enabled,
 					'status' => $status,
 					'type' => 'wysiwyg-advanced'
@@ -222,9 +224,9 @@ class Wp_Import {
 						$comments[$slug][] = array(
 							'is_active' => 1,
 							'user_id' => 0,
-							'name' => (string) $comment->comment_author,
-							'email' => (string) $comment->comment_author_email,
-							'website' => (string) $comment->comment_author_url,
+							'user_name' => (string) $comment->comment_author,
+							'user_email' => (string) $comment->comment_author_email,
+							'user_website' => (string) $comment->comment_author_url,
 							'comment' => (string) mb_convert_encoding($comment->comment_content,"HTML-ENTITIES","UTF-8"),
 							'parsed' => '',
 							'module' => 'blog',
