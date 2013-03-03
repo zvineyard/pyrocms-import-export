@@ -184,6 +184,8 @@ class Wp_Import {
 					'author_id' => $this->ci->session->userdata('id'),
 					'created_on' => (string) strtotime($val->post_date),
 					'updated_on' => (string) strtotime($val->pubDate),
+					'created' => (string) strtotime($val->post_date),
+					'updated' => date('Y-m-d H:i:s', (string) strtotime($val->pubDate)),
 					'comments_enabled' => $comments_enabled,
 					'status' => $status,
 					'type' => 'wysiwyg-advanced'
