@@ -177,6 +177,7 @@ class Wp_Import {
 					'title' => (string) $val->title,
 					'slug' => $slug,
 					'category_id' => $category_id,
+					'created' => (string) $val->post_date,
 					'intro' => (string) mb_convert_encoding($val->excerpt,"HTML-ENTITIES", "UTF-8"),
 					'body' => nl2br((string) mb_convert_encoding($val->content,"HTML-ENTITIES", "UTF-8")),
 					'parsed' => '',
@@ -184,7 +185,7 @@ class Wp_Import {
 					'author_id' => $this->ci->session->userdata('id'),
 					'created_on' => (string) strtotime($val->post_date),
 					'updated_on' => (string) strtotime($val->pubDate),
-					'comments_enabled' => $comments_enabled,
+					'comments_enabled' => (string) (!$comments_enabled) ? "no" : "always",
 					'status' => $status,
 					'type' => 'wysiwyg-advanced'
 				);
