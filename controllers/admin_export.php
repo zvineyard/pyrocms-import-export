@@ -74,15 +74,23 @@ class Admin_export extends Admin_Controller
 
 		if($table_list)
 		{
+			// Define var to hold table column XML
+			$db_columns = "";
+
 			foreach ($table_list as $key => $table)
 			{
 				// If database isn't empty, add to output
+				$fields = array();
 				if($this->db->count_all($table) > 0)
 				{
+					$db_columns .= $this->_prep_xml($this->format->factory($this->db->field_data($table))->to_xml(),$table."_table_columns");
 					$output .= $this->_prep_xml($this->export_m->export($table,'xml'),$table);
 				}
 			}
 		}
+
+		// Append table column data to output string
+		$output .= $db_columns;
 
 		// Reset databse prefix
 		$this->db->set_dbprefix(SITE_REF.'_');
