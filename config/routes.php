@@ -21,7 +21,8 @@
 */
 
 // admin
-$route['import_export/admin/export(/:any)?']		= 'admin_export$1';
-$route['import_export/admin/export_data(/:any)?']	= 'admin_export/export_data$1';
-$route['import_export/admin/export_blog(/:any)?']	= 'admin_export/export_blog$1';
-$route['import_export/admin/export_site(/:any)?']	= 'admin_export/export_site$1';
+$route['import_export/admin/export(/:any)?']			= 'admin_export$1';
+$route['import_export/admin/import_files(/:any)?']		= 'admin_import_files$1';
+$route['import_export/admin/export_data(/:any)?']		= 'admin_export/export_data$1';
+$route['import_export/admin/export_blog(/:any)?']		= 'admin_export/export_blog$1';
+$route['import_export/admin/export_site(/:any)?']		= 'admin_export/export_site$1';

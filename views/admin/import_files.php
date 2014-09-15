@@ -12,12 +12,8 @@
 		
 				<ul>
 					<li>
-		            	<p><?php echo lang('ie:import_inst'); ?></p>
+		            	<p><?php echo lang('ie:import_files_inst'); ?></p>
 						<div class="input"><input type="file" name="userfile" size="20" /></div>
-					</li>
-					<li>
-		            	<p><?php echo lang('ie:import_users_help'); ?></p>
-						<div class="input"><label><?php echo lang('ie:import_users'); ?></label><?php echo form_checkbox('import_users','accept'); ?></div>
 					</li>
 				</ul>
 			
@@ -25,7 +21,6 @@
 			
 			<div class="buttons">
 				<?php $this->load->view('admin/partials/buttons', array('buttons' => array('import'))); ?>
-				<?php $this->load->view('admin/partials/buttons', array('buttons' => array('wp_import'))); ?>
 			</div>
 
 		<?php echo form_close(); ?>

@@ -101,6 +101,7 @@ class Admin extends Admin_Controller
         //die();
 
         // If versions don't match, freak out
+        /*
         if(CMS_VERSION != $cms_version)
         {
             // Redirect
@@ -115,6 +116,7 @@ class Admin extends Admin_Controller
             $this->session->set_flashdata('error', str_replace("%s",$cms_edition,lang('ie:edition_mismatch')));
             redirect('admin/'.$this->module_details['slug']);
         }
+        */
 
         // The loop below needs to be a class (STILL NEEDED)
         foreach($obj as $table_name => $table_data)

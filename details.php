@@ -46,6 +46,19 @@ class Module_Import_export extends Module {
 				    ),
 				    */
 			    ),
+				'import_files' => array(
+				    'name' => 'ie:import_files',
+				    'uri' => 'admin/import_export/import_files',
+				    /*
+				    'shortcuts' => array(
+						array(
+						    'name' => 'ie:create',
+						    'uri' => 'admin/import_export/export/create',
+						    'class' => 'add'
+						),
+				    ),
+				    */
+			    )
 		    ),
 		);
 	}

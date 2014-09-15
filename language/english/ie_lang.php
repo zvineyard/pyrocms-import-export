@@ -3,6 +3,7 @@
 //sections
 $lang['ie:import']				= 'Import';
 $lang['ie:export']				= 'Export';
+$lang['ie:import_files']		= 'Import Files';
 $lang['ie:blog']				= 'Blog';
 $lang['ie:site']				= 'Export';
 
@@ -29,6 +30,7 @@ $lang['ie:cancel']				= 'Cancel';
 //help and desc
 $lang['ie:choose_site'] 		= 'To export your site, simply click the export button below.';
 $lang['ie:import_inst'] 		= 'Please choose a XML export file to use for importing your site. If you are planning to import your WordPress site/blog into PyroCMS, <br />please choose the XML file you exported out of WordPress.';
+$lang['ie:import_files_inst'] 	= 'Please choose a XML export file to use for importing site files. You can obtain this file from the "Maintenance" module in your previous PyroCMS installation.';
 $lang['ie:import_users_help'] 	= 'Would you like to import the users from your previous site? If not, your new content will be assigned to you, the current logged-in user. <br /> PLEASE NOTE: This feature is not enabled for WordPress imports. All WordPress content is currently assiged to you, the user importing the site.';
 $lang['ie:duplicates'] 			= 'It looks like your WordPress data has duplicate post titles. Please rename the titles you see below in your XML data.';
 
